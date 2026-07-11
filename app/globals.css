@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-bg text-card font-body;
+  }
+}
+
+@layer components {
+  .chunk {
+    @apply border-[3px] border-ink rounded-chunk shadow-chunk;
+    background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.22) 0%,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(0, 0, 0, 0.12) 100%
+    );
+  }
+
+  .chunk-panel {
+    @apply chunk bg-card text-ink;
+  }
+
+  .gold-bullets {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .gold-bullets li {
+    @apply relative pl-7 mb-2;
+  }
+
+  .gold-bullets li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.35em;
+    width: 0.7em;
+    height: 0.7em;
+    background-color: #ffc933;
+    border: 2px solid #120c24;
+  }
+
+  .marquee-text {
+    text-shadow:
+      3px 3px 0 #ff3e7f,
+      6px 6px 0 #33e4ff,
+      9px 9px 0 #120c24;
+  }
+}
